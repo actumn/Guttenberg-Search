@@ -2,7 +2,7 @@ const elasticsearch = require('elasticsearch')
 
 // Core ES variables for this project
 const index = 'library'
-const type = 'book'
+const type = '_doc'
 const port = 8080
 const host = process.env.ES_HOST || 'localhost'
 const client = new elasticsearch.Client({ host: { host, port } })

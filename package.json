@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "description": "Source code for ElasticSearch tutorial using 100 classic open source books.",
   "scripts": {
+    "index": "node server/load_data.js",
     "start": "node --inspect=0.0.0.0:9229 server/app.js",
-    "website": "http-server ./public" 
+    "website": "http-server -p 1443 ./public"
   },
   "repository": {
     "type": "git",

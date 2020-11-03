@@ -6,7 +6,11 @@ module.exports = {
     const body = {
       // from: offset,
       query: { match: {
-        text: term
+        text: {
+          query: term,
+          operator: 'and',
+          fuzziness: 'auto'
+        }
       } },
       highlight: { fields: { text: {} } }
     }
@@ -22,8 +26,8 @@ module.exports = {
     ]
 
     const body = {
-      // size: endLocation - startLocation,
-      // sort: { location: 'asc' },
+      size: endLocation - startLocation,
+      sort: { location: 'asc' },
       query: { bool: { filter } }
     }
 
